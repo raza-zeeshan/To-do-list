@@ -146,8 +146,12 @@ app.get("/:customListName", function (req, res) {
 //     workItems.push(item);
 //     res.redirect("/work");
 // });
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
-app.listen(3000, function () {
-    console.log("server started on port 3000");
+app.listen(port, function () {
+    console.log("server started successfully");
 });
 
